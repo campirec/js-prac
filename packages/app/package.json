@@ -7,6 +7,9 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
+    "test": "tsx src/deepClone.test.ts",
+    "test:deepClone": "tsx src/deepClone.test.ts",
+    "test:customNew": "tsx src/customNew.test.ts",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "clean": "rm -rf dist"
   }

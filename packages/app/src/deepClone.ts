@@ -59,12 +59,10 @@ export const deepClone = <T extends Cloneable>(obj: T, map: WeakMap<object, any>
   if (map.has(obj)) {
     return map.get(obj);
   }
-  const result: { [key: string]: any } = {};
+  const result: any = {};
   map.set(obj, result);
-  for (const key in obj) {
-    if (Object.prototype.hasOwnProperty.call(obj, key)) {
-      result[key] = deepClone((obj as { [key: string]: any })[key], map);
-    }
+  for (const key of Reflect.ownKeys(obj)) {
+    result[key] = deepClone((obj as any)[key], map);
   }
   return result;
 }
