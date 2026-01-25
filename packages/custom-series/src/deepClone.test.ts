@@ -1,4 +1,4 @@
-import { deepClone } from './deepClone';
+import { customDeepClone as deepClone } from './deepClone';
 
 // Test helper
 function assertEqual(actual: any, expected: any, message: string) {
